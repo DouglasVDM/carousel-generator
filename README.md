@@ -2,7 +2,10 @@
 
 1. [Carouser Generator](#carousel-generator)
 2. [Coding Challenge #20](#link-to-challenge)
-3. [Getting Started](#getting-started-with-create-react-app)   
+3. [Business Logic](#business-logic)
+4. [User Interface](#user-interface)
+   1. [Step 1](#step-1)
+5. [Getting Started](#getting-started-with-create-react-app)   
     a.
    
 # carousel-generator
@@ -12,6 +15,27 @@ A software tool that allows a user to create a carousel that they can use on a L
 ## Link to challenge
 [Coding Challenge #20 - LinkedIn Carousel Generator](https://codingchallenges.substack.com/p/coding-challenge-20-linkedin-carousel?utm_source=post-email-title&publication_id=1483213&post_id=135523169&isFreemail=true&utm_medium=email)
 
+## Business Logic
+
+Build a software tool that allows a user to create a carousel that they can use on a LinkedIn post.   
+Though you don’t have to use it for that - you could use it to generate handouts for your next tech talk - it’s essentially going to build a PDF document.
+
+
+
+## User Interface
+
+### Step 1
+
+In this step the goal is to allow the user to preview a slide with some text on it.   
+So that means the user should be presented with a GUI that shows a slide preview and a text box.   
+When the test is updated the slide preview is updated.
+
+LinkedIn supports multiple sizes, with a common size being the 1080 x 1080 pixel square.   
+ The max supported is 4320 x 4320 pixels.   
+ For this challenge we will stick to a 1080 x 1080 square which will make it feasible to offer a full sized preview on most screens.
+
+---
+---
 ---
 
 # Getting Started with Create React App
