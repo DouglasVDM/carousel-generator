@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Pdf = () => {
-  return (
-    <div data-testid="pdf">Enter your text here</div>
-  )
-}
+  const [text, setText] = useState("");
 
-export default Pdf
+
+  // const onSubmit = ()=>{
+  // }:
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    const pdfText = event.target.value;
+    setText(pdfText);
+  };
+
+  return (
+    <div>
+      <input
+        data-testid="pdf"
+        type="text"
+        name="input-text"
+        value={text}
+        onChange={handleChange}
+        placeholder="Enter your text here"
+      />
+      <h1>{text}</h1>
+    </div>
+  );
+};
+
+export default Pdf;

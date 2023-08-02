@@ -1,10 +1,18 @@
-import { render,screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
-import Pdf from './Pdf';
+import Pdf from "./Pdf";
 
-describe('Pdf component', () => { it("displays 'Enter your text here'", () => {
-    render(<Pdf text="input"/>)
-    expect(screen.getByTestId("pdf")).toHaveTextContent("Enter your text here");    
-}); })
+describe("Pdf component", () => {
+  it("updates its value when the user types", () => {
+    // Arrange
+    render(<Pdf />);
+    const element = screen.getByTestId("pdf");
 
-// component will have a single prop named text, that matches the value returned from the service, and will render an element with data-testid="pdf", to match our higher-level tests, with the expected text.
+    // Act
+    fireEvent.change(element, { target: { value: 'Hello, TDD!' } });
+
+    
+    // Assert
+    expect(element.value).toBe('Hello, TDD!');
+  });
+});
