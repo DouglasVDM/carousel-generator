@@ -13,30 +13,16 @@ const Pdf = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h1>{text}</h1>
-      </div>
-      <div>
-        <input
-          data-testid="pdf"
-          type="text"
-          name="input-text"
-          value={text}
-          onChange={handleChange}
-          placeholder="Enter your text here"
-        />
-      </div>
-      <div>
-        <label for="avatar">Choose a profile picture:</label>
-
-        <input
-          type="file"
-          id="avatar"
-          name="avatar"
-          accept="image/png, image/jpeg"
-        />
-      </div>
+    <div className="input-container">
+      <h1>{text}</h1>
+      <input
+        data-testid="pdf"
+        type="text"
+        name="input-text"
+        value={text}
+        onChange={handleChange}
+        placeholder="Enter your text here"
+      />
     </div>
   );
 };

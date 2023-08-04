@@ -9,9 +9,10 @@ describe("Pdf component", () => {
     const element = screen.getByTestId("pdf");
 
     // Act
-    fireEvent.change(element, { target: { value: "Hello, TDD!" } });
+    fireEvent.change(element, { target: { value: 'Hello, TDD!' } });
 
+    
     // Assert
-    expect(element.value).toBe("Hello, TDD!");
+    expect(element.value).toBe('Hello, TDD!');
   });
 });
