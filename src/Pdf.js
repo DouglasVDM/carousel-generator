@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const Pdf = () => {
   const [text, setText] = useState("");
 
-
   // const onSubmit = ()=>{
   // }:
 
@@ -14,7 +13,8 @@ const Pdf = () => {
   };
 
   return (
-    <div>
+    <div className="input-container">
+      <h1>{text}</h1>
       <input
         data-testid="pdf"
         type="text"
@@ -23,7 +23,6 @@ const Pdf = () => {
         onChange={handleChange}
         placeholder="Enter your text here"
       />
-      <h1>{text}</h1>
     </div>
   );
 };
