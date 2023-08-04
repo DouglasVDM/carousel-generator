@@ -5,8 +5,13 @@
 3. [Business Logic](#business-logic)
 4. [User Interface](#user-interface)
    1. [Step 1](#step-1)
-5. [Getting Started](#getting-started-with-create-react-app)   
-    a.
+   2. [Step 2](#step-2)
+   2. [Step 3](#step-3)
+   3. [Step 4](#step-4)
+   4. [Step 5](#step-5)
+   5. [Step 6](#step-6)
+   6. [Going Further](#going-further)
+5. [Getting Started CRA](#getting-started-with-create-react-app)   
    
 # carousel-generator
 A software tool that allows a user to create a carousel that they can use on a LinkedIn post. It’s essentially going to build a PDF document.
@@ -28,11 +33,39 @@ Though you don’t have to use it for that - you could use it to generate handou
 
 In this step the goal is to allow the user to preview a slide with some text on it.   
 So that means the user should be presented with a GUI that shows a slide preview and a text box.   
-When the test is updated the slide preview is updated.
+When the text is updated the slide preview is updated.
 
 LinkedIn supports multiple sizes, with a common size being the 1080 x 1080 pixel square.   
  The max supported is 4320 x 4320 pixels.   
- For this challenge we will stick to a 1080 x 1080 square which will make it feasible to offer a full sized preview on most screens.
+ For this challenge, stick to a 1080 x 1080 square which will make it feasible to offer a full sized preview on most screens.
+
+### Step 2
+
+In this step the goal is to be able to add a profile image, which will be shown in the top left hand corner and their name that can be shown beneath it.
+
+To do that, add the ability to upload an image as well as to specify name/handle. 
+
+### Step 3
+
+In this step the goal is to set the background and foreground colour as well as the font face and size.   
+These will affect all the slides.
+
+### Step 4
+
+In this step the goal is to be able to add a slide and navigate through the slides, with the preview and edit options for the text on each slide.
+
+### Step 5
+
+In this step the goal is to add an image as the background of an individual slide, a high level of transparency is a good idea (or go one step further and make it configurable).
+
+### Step 6
+
+In this step the goal is to export the carousel as a PDF. The PDF should have one page per slide, reflecting the font, color, content and background image added for each slide.
+
+### Going Further
+
+Take this further and add support for PowerPoint and other formats.   
+Try to integrate with the LinkedIn API to post it.
 
 ---
 ---
