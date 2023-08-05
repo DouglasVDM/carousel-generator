@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+import FileUpload from "./FileUpload";
 
 const Pdf = () => {
   const [text, setText] = useState("");
@@ -14,6 +16,9 @@ const Pdf = () => {
 
   return (
     <div className="input-container">
+      <div>
+        <FileUpload />
+      </div>
       <div>
         <h1>{text}</h1>
       </div>
