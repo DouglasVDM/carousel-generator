@@ -1,17 +1,32 @@
 # Table of Contents
 
-1. [Carouser Generator](#carousel-generator)
-2. [Coding Challenge #20](#link-to-challenge)
-3. [Business Logic](#business-logic)
-4. [User Interface](#user-interface)
-   1. [Step 1](#step-1)
-   2. [Step 2](#step-2)
-   2. [Step 3](#step-3)
-   3. [Step 4](#step-4)
-   4. [Step 5](#step-5)
-   5. [Step 6](#step-6)
-   6. [Going Further](#going-further)
-5. [Getting Started CRA](#getting-started-with-create-react-app)   
+- [Table of Contents](#table-of-contents)
+- [carousel-generator](#carousel-generator)
+  - [Link to challenge](#link-to-challenge)
+  - [Business Logic](#business-logic)
+  - [User Interface](#user-interface)
+    - [Step 1](#step-1)
+    - [Step 2](#step-2)
+    - [Step 3](#step-3)
+    - [Step 4](#step-4)
+    - [Step 5](#step-5)
+    - [Step 6](#step-6)
+    - [Going Further](#going-further)
+  - [Pdf Component](#pdf-component)
+  - [FileUpload Component](#fileupload-component)
+- [Getting Started with Create React App](#getting-started-with-create-react-app)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run eject`](#npm-run-eject)
+  - [Learn More](#learn-more)
+    - [Code Splitting](#code-splitting)
+    - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    - [Making a Progressive Web App](#making-a-progressive-web-app)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Deployment](#deployment)
+    - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
    
 # carousel-generator
 A software tool that allows a user to create a carousel that they can use on a LinkedIn post. It’s essentially going to build a PDF document.
@@ -69,6 +84,24 @@ Try to integrate with the LinkedIn API to post it.
 
 ---
 ---
+
+## Pdf Component
+
+The `Pdf` component is a React functional component that renders an input field and displays the:   
+text entered in the input field as a heading.   
+@returns The Pdf component is being returned.
+
+## FileUpload Component
+
+The `FileUpload` component is a React component that allows users to select an image file and
+preview it.   
+
+The FileUpload component is returning a JSX fragment.   
+Inside the fragment, there are two
+div elements.   
+The first div element is conditionally rendered based on the imageUrl and selectedImage state.   
+If both values are truthy, it renders an h4 element with the text "Image Preview:" and an img element with the src set to the imageUrl and the alt set to the selectedImage name.
+
 ---
 
 # Getting Started with Create React App
