@@ -14,15 +14,19 @@ const Pdf = () => {
 
   return (
     <div className="input-container">
-      <h1>{text}</h1>
-      <input
-        data-testid="pdf"
-        type="text"
-        name="input-text"
-        value={text}
-        onChange={handleChange}
-        placeholder="Enter your text here"
-      />
+      <div>
+        <h1>{text}</h1>
+      </div>
+      <div>
+        <input
+          data-testid="pdf"
+          type="text"
+          name="input-text"
+          value={text}
+          onChange={handleChange}
+          placeholder="Enter your text here"
+        />
+      </div>
     </div>
   );
 };
