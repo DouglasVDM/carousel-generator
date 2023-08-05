@@ -1,4 +1,4 @@
-import Pdf from "./Pdf";
+import Pdf from "./components/Pdf";
 import "./App.css";
 
 function App() {
