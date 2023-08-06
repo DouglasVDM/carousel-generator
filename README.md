@@ -93,14 +93,10 @@ text entered in the input field as a heading.
 
 ## FileUpload Component
 
-The `FileUpload` component is a React component that allows users to select an image file and
-preview it.   
-
-The FileUpload component is returning a JSX fragment.   
-Inside the fragment, there are two
-div elements.   
-The first div element is conditionally rendered based on the imageUrl and selectedImage state.   
-If both values are truthy, it renders an h4 element with the text "Image Preview:" and an img element with the src set to the imageUrl and the alt set to the selectedImage name.
+The `FileUpload` component is a React component that allows users to upload an image file and enter
+a handle name.   
+@returns The FileUpload component is returning a JSX fragment.   
+Inside the fragment, there are conditional rendering statements that display an image preview if an image is selected, and a form with a file input and a text input for entering a handle name.
 
 ---
 
