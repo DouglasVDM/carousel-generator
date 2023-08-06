@@ -13,7 +13,7 @@ describe("FileUpload", () => {
     render(<FileUpload />);
     const fileInput = screen.getByTestId("file-input");
 
-    const file = new File(["test file content"], "test.jpg", {
+    const file = new File(["test file content"], ["test.jpg","test.png"], {
       type: "image/jpg",
     });
 
