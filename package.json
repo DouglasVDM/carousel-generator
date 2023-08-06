@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.3",
     "@testing-library/cypress": "^9.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
@@ -30,7 +33,7 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_npm i @material-ui/coreini all"
     ],
     "development": [
       "last 1 chrome version",
