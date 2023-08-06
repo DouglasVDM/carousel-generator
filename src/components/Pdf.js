@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import FileUpload from "./FileUpload";
+import { Box, TextField } from "@mui/material";
 
 const Pdf = () => {
   const [text, setText] = useState("");
@@ -22,16 +23,19 @@ const Pdf = () => {
       <div>
         <h1>{text}</h1>
       </div>
-      <div>
-        <input
+      <Box>
+        <TextField
           data-testid="pdf"
+          id="outlined-basic"
+          label="Enter your text"
+          variant="outlined"
           type="text"
           name="input-text"
           value={text}
           onChange={handleChange}
           placeholder="Enter your text here"
         />
-      </div>
+      </Box>
     </div>
   );
 };
