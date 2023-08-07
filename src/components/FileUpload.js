@@ -1,11 +1,21 @@
-
-import { Box, Button, TextField } from "@mui/material";
+import { Avatar, Box, Button, Stack, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const FileUpload = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [handleName, setHandleName] = useState("");
+
+  const [text, setText] = useState("");
+
+  // const onSubmit = ()=>{
+  // }:
+
+  const handleTextChange = (event) => {
+    event.preventDefault();
+    const pdfText = event.target.value;
+    setText(pdfText);
+  };
 
   const handleChange = (event) => {
     console.log(event.target.files[0]);
@@ -28,12 +38,12 @@ const FileUpload = () => {
   return (
     <>
       {imageUrl && selectedImage && (
-        <Box mt={2} textAlign="center">
-          <h4> Image Preview: {selectedImage.name}</h4>
-          <img src={imageUrl} alt={selectedImage.name} height="100px" />
-        </Box>
+        <Stack direction="row" textAlign="center">
+          <Avatar sx={{width:56, height:56}} src={imageUrl} alt={selectedImage.name} />
+          <h3>{handleName}</h3>
+        </Stack>
       )}
-
+      <h1>{text}</h1>
       <Box>
         <TextField
           data-testid="file-input"
@@ -51,19 +61,32 @@ const FileUpload = () => {
             Upload Image
           </Button>
         </label>
-        <h3>Handle Name: {handleName}</h3>
-
-        <TextField
-          data-testid="pdf"
-          id="outlined-basic"
-          label="Enter your handle name"
-          variant="outlined"
-          type="text"
-          name="input-text"
-          value={handleName}
-          onChange={handleNameChange}
-          placeholder="Enter your name here"
-        />
+        <Box mt={2}>
+          <TextField
+            data-testid="pdf"
+            id="outlined-basic"
+            label="Enter your handle name"
+            variant="outlined"
+            type="text"
+            name="input-text"
+            value={handleName}
+            onChange={handleNameChange}
+            placeholder="Enter your name here"
+          />
+        </Box>
+        <Box mt={2}>
+          <TextField
+            data-testid="pdf"
+            id="outlined-basic"
+            label="Enter your text"
+            variant="outlined"
+            type="text"
+            name="input-text"
+            value={text}
+            onChange={handleTextChange}
+            placeholder="Enter your text here"
+          />
+        </Box>
       </Box>
     </>
   );
