@@ -16,7 +16,17 @@ const FileUpload = () => {
   const [imageUrl, setImageUrl] = useState(null);
   const [handleName, setHandleName] = useState("");
   const [text, setText] = useState("");
- 
+  const [backgroundColor, setBackgroundColor] = useState("");
+
+  const colors = [
+    { id: 1, name: "paleturquoise", hex: "#AFEEEE" },
+    { id: 2, name: "turquoise", hex: "#40E0D0" },
+    { id: 3, name: "aqua", hex: "#00ffff" },
+  ];
+
+  const handleBackgroundColorChange = (event) => {
+    setBackgroundColor(event.target.value);
+  };
 
   const handleTextChange = (event) => {
     event.preventDefault();
@@ -43,7 +53,7 @@ const FileUpload = () => {
   }, [selectedImage]);
 
   return (
- <>
+    <Stack sx={{ background: backgroundColor }}>
       {imageUrl && selectedImage && (
         <Stack direction="row" textAlign="center">
           <Avatar
@@ -98,8 +108,30 @@ const FileUpload = () => {
             placeholder="Enter your text here"
           />
         </Box>
+        <Box mt={2}>
+          <FormControl fullWidth>
+            <InputLabel id="background-color-select-label">
+              Background Color
+            </InputLabel>
+            <Select
+              labelId="background-color-select-label"
+              id="background-color-select"
+              value={backgroundColor}
+              label="Background Color"
+              onChange={handleBackgroundColorChange}
+            >
+              {colors.map((color) => {
+                return (
+                  <MenuItem key={color.id} value={color.hex}>
+                    {color.name}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </Box>
       </Box>
-      </>
+    </Stack>
   );
 };
 
