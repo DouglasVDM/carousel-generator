@@ -1,15 +1,22 @@
-import { Avatar, Box, Button, Stack, TextField } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const FileUpload = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [handleName, setHandleName] = useState("");
-
   const [text, setText] = useState("");
-
-  // const onSubmit = ()=>{
-  // }:
+ 
 
   const handleTextChange = (event) => {
     event.preventDefault();
@@ -36,10 +43,14 @@ const FileUpload = () => {
   }, [selectedImage]);
 
   return (
-    <>
+ <>
       {imageUrl && selectedImage && (
         <Stack direction="row" textAlign="center">
-          <Avatar sx={{width:56, height:56}} src={imageUrl} alt={selectedImage.name} />
+          <Avatar
+            sx={{ width: 56, height: 56 }}
+            src={imageUrl}
+            alt={selectedImage.name}
+          />
           <h3>{handleName}</h3>
         </Stack>
       )}
@@ -88,7 +99,7 @@ const FileUpload = () => {
           />
         </Box>
       </Box>
-    </>
+      </>
   );
 };
 
