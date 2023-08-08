@@ -17,15 +17,21 @@ const FileUpload = () => {
   const [handleName, setHandleName] = useState("");
   const [text, setText] = useState("");
   const [backgroundColor, setBackgroundColor] = useState("");
+  const [textColor, setTextColor] = useState("");
 
   const colors = [
-    { id: 1, name: "paleturquoise", hex: "#AFEEEE" },
-    { id: 2, name: "turquoise", hex: "#40E0D0" },
-    { id: 3, name: "aqua", hex: "#00ffff" },
+    { id: 1, name: "red", hex: "#FF0000" },
+    { id: 2, name: "green", hex: "#008000" },
+    { id: 3, name: "orange", hex: "#FFA500" },
+    { id: 4, name: "white", hex: "#FFFFFF" },
   ];
 
   const handleBackgroundColorChange = (event) => {
     setBackgroundColor(event.target.value);
+  };
+
+  const handleTextColorChange = (event) => {
+    setTextColor(event.target.value);
   };
 
   const handleTextChange = (event) => {
@@ -53,7 +59,10 @@ const FileUpload = () => {
     if (backgroundColor) {
       document.body.style.backgroundColor = backgroundColor;
     }
-  }, [selectedImage, backgroundColor]);
+    if (textColor) {
+      document.body.style.color = textColor;
+    }
+  }, [selectedImage, backgroundColor, textColor]);
 
   return (
     <Stack>
@@ -123,10 +132,30 @@ const FileUpload = () => {
               label="Background Color"
               onChange={handleBackgroundColorChange}
             >
-              {colors.map((color) => {
+              {colors.map((bgColor) => {
                 return (
-                  <MenuItem key={color.id} value={color.hex}>
-                    {color.name}
+                  <MenuItem key={bgColor.id} value={bgColor.hex}>
+                    {bgColor.name}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box mt={2}>
+          <FormControl fullWidth>
+            <InputLabel id="text-color-select-label">Text Color</InputLabel>
+            <Select
+              labelId="text-color-select-label"
+              id="text-color-select"
+              value={textColor}
+              label="Text Color"
+              onChange={handleTextColorChange}
+            >
+              {colors.map((textColor) => {
+                return (
+                  <MenuItem key={textColor.id} value={textColor.hex}>
+                    {textColor.name}
                   </MenuItem>
                 );
               })}
