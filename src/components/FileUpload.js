@@ -18,6 +18,8 @@ const FileUpload = () => {
   const [text, setText] = useState("");
   const [backgroundColor, setBackgroundColor] = useState("");
   const [textColor, setTextColor] = useState("");
+  const [fontSize, setFontSize] = useState("");
+  const [fontFace, setFontFace] = useState("");
 
   const colors = [
     { id: 1, name: "red", hex: "#FF0000" },
@@ -25,6 +27,28 @@ const FileUpload = () => {
     { id: 3, name: "orange", hex: "#FFA500" },
     { id: 4, name: "white", hex: "#FFFFFF" },
   ];
+
+  const fontSizes = [
+    { id: 1, name: "small" },
+    { id: 2, name: "medium" },
+    { id: 3, name: "large" },
+    { id: 4, name: "x-large" },
+  ];
+
+  const fontFaces = [
+    { id: 1, name: "arial" },
+    { id: 2, name: "verdana" },
+    { id: 3, name: "tahoma" },
+    { id: 4, name: "time new roman" },
+  ];
+
+  const handleFontFaceChange = (event) => {
+    setFontFace(event.target.value);
+  };
+
+  const handleFontSizeChange = (event) => {
+    setFontSize(event.target.value);
+  };
 
   const handleBackgroundColorChange = (event) => {
     setBackgroundColor(event.target.value);
@@ -62,7 +86,13 @@ const FileUpload = () => {
     if (textColor) {
       document.body.style.color = textColor;
     }
-  }, [selectedImage, backgroundColor, textColor]);
+    if (fontSize) {
+      document.body.style.fontSize = fontSize;
+    }
+    if (fontFace) {
+      document.body.style.fontFamily = fontFace;
+    }
+  }, [selectedImage, backgroundColor, textColor, fontSize, fontFace]);
 
   return (
     <Stack>
@@ -156,6 +186,46 @@ const FileUpload = () => {
                 return (
                   <MenuItem key={textColor.id} value={textColor.hex}>
                     {textColor.name}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box mt={2}>
+          <FormControl fullWidth>
+            <InputLabel id="font-size-select-label">Font Size</InputLabel>
+            <Select
+              labelId="font-size-select-label"
+              id="font-size-select"
+              value={fontSize}
+              label="font size"
+              onChange={handleFontSizeChange}
+            >
+              {fontSizes.map((font) => {
+                return (
+                  <MenuItem key={font.id} value={font.name}>
+                    {font.name}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box mt={2}>
+          <FormControl fullWidth>
+            <InputLabel id="font-face-select-label">Font Face</InputLabel>
+            <Select
+              labelId="font-face-select-label"
+              id="font-face-select"
+              value={fontFace}
+              label="font face"
+              onChange={handleFontFaceChange}
+            >
+              {fontFaces.map((font) => {
+                return (
+                  <MenuItem key={font.id} value={font.name}>
+                    {font.name}
                   </MenuItem>
                 );
               })}
