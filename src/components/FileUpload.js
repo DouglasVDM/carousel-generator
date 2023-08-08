@@ -34,7 +34,7 @@ const FileUpload = () => {
     setText(pdfText);
   };
 
-  const handleChange = (event) => {
+  const handleProfilePictureChange = (event) => {
     console.log(event.target.files[0]);
     const profilePicture = event.target.files[0];
     setSelectedImage(profilePicture);
@@ -50,10 +50,13 @@ const FileUpload = () => {
     if (selectedImage) {
       setImageUrl(URL.createObjectURL(selectedImage));
     }
-  }, [selectedImage]);
+    if (backgroundColor) {
+      document.body.style.backgroundColor = backgroundColor;
+    }
+  }, [selectedImage, backgroundColor]);
 
   return (
-    <Stack sx={{ background: backgroundColor }}>
+    <Stack>
       {imageUrl && selectedImage && (
         <Stack direction="row" textAlign="center">
           <Avatar
@@ -75,7 +78,7 @@ const FileUpload = () => {
           id="select-image"
           name="select-image"
           style={{ display: "none" }}
-          onChange={handleChange}
+          onChange={handleProfilePictureChange}
         />
         <label htmlFor="select-image">
           <Button variant="contained" color="primary" component="span">
