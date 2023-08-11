@@ -10,6 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 const FileUpload = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -20,6 +21,10 @@ const FileUpload = () => {
   const [textColor, setTextColor] = useState("");
   const [fontSize, setFontSize] = useState("");
   const [fontFace, setFontFace] = useState("");
+
+
+  const id = 1;
+  console.log("num :", id);
 
   const colors = [
     { id: 1, name: "red", hex: "#FF0000" },
@@ -96,6 +101,20 @@ const FileUpload = () => {
 
   return (
     <Stack>
+      <>
+        <h2>Duplicated Component {id}</h2>
+        <>
+          {id > 0 && (
+            <Link to={`/parent/${id - 1}`}>
+              <span>&#x2190;</span> Previous
+            </Link>
+          )}
+          <Link to={`/parent/${id + 1}`}>
+            Next <span>&#x2192;</span>
+          </Link>
+        </>
+      </>
+
       {imageUrl && selectedImage && (
         <Stack direction="row" textAlign="center">
           <Avatar
