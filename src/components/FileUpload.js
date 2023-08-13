@@ -10,7 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const FileUpload = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -22,9 +22,8 @@ const FileUpload = () => {
   const [fontSize, setFontSize] = useState("");
   const [fontFace, setFontFace] = useState("");
 
-
-  const id = 1;
-  console.log("num :", id);
+  const id = 0;
+  console.log("component number :", id);
 
   const colors = [
     { id: 1, name: "red", hex: "#FF0000" },
