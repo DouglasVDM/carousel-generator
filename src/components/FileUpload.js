@@ -10,7 +10,6 @@ import {
   TextField,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
 
 const FileUpload = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -101,20 +100,6 @@ const FileUpload = () => {
 
   return (
     <Stack>
-      <>
-        <h2>Duplicated Component {id}</h2>
-        <>
-          {id > 0 && (
-            <Link to={`/parent/${id - 1}`}>
-              <span>&#x2190;</span> Previous
-            </Link>
-          )}
-          <Link to={`/parent/${id + 1}`}>
-            Next <span>&#x2192;</span>
-          </Link>
-        </>
-      </>
-
       {imageUrl && selectedImage && (
         <Stack direction="row" textAlign="center">
           <Avatar
