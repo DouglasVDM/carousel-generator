@@ -34,12 +34,6 @@ function App() {
         Next
       </button>
       <Pdf
-        renderItem={(duplicatedComponent, isHighlighted) => (
-          <FileUpload
-            key={duplicatedComponent.id}
-            isHighlighted={isHighlighted}
-          />
-        )}
       />
     </div>
   );
