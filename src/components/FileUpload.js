@@ -10,7 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import withNavigation from "./withNavigation";
+import withDuplicateAndNavigation from "./withDuplicateAndNavigation";
 
 const FileUpload = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -242,4 +242,4 @@ const FileUpload = () => {
   );
 };
 
-export default withNavigation(FileUpload);
+export default withDuplicateAndNavigation(FileUpload);
