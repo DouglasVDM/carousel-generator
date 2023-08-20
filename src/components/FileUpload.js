@@ -22,10 +22,6 @@ const FileUpload = () => {
   const [fontSize, setFontSize] = useState("");
   const [fontFace, setFontFace] = useState("");
 
-
-  const id = 1;
-  console.log("num :", id);
-
   const colors = [
     { id: 1, name: "red", hex: "#FF0000" },
     { id: 2, name: "green", hex: "#008000" },
