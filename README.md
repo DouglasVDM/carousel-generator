@@ -14,6 +14,8 @@
     - [Going Further](#going-further)
   - [Pdf Component](#pdf-component)
   - [FileUpload Component](#fileupload-component)
+  - [HOC - Higher Order Component Diagram](#hoc---higher-order-component-diagram)
+    - [Explanation:](#explanation)
 - [Getting Started with Create React App](#getting-started-with-create-react-app)
   - [Available Scripts](#available-scripts)
     - [`npm start`](#npm-start)
@@ -97,6 +99,31 @@ The `FileUpload` component is a React component that allows users to upload an i
 a handle name.   
 @returns The FileUpload component is returning a JSX fragment.   
 Inside the fragment, there are conditional rendering statements that display an image preview if an image is selected, and a form with a file input and a text input for entering a handle name.
+
+## HOC - Higher Order Component Diagram
+
+```mermaid
+graph TD
+  A[MyComponent] -->|Wrapped by| B[DuplicateAndNavigationComponent]
+  B -->|Wrapped by| C[DuplicateComponent]
+  C -->|Wrapped by| D[WrappedComponent]
+  D -->|Rendered inside| E[Router]
+  E -->|Provides| F[history]
+  E -->|Provides| G[navigation]
+  F -->|Used by| B
+  G -->|Used by| B
+```
+
+### Explanation:
+  - `MyComponent` is the original component that you want to duplicate and add navigation to.
+  - `DuplicateAndNavigationComponent` is the component created by the `withDuplicateAndNavigation` HOC, which wraps `MyComponent` and adds duplication and navigation functionality.
+  - `DuplicateComponent` is the component created by the `withDuplicate` HOC, which wraps `MyComponent` and handles the duplication logic.
+  - `WrappedComponent` is the original `MyComponent` that receives props from its parent components.
+  - `Router` is the component provided by `react-router-dom` that manages the routing and navigation functionality.
+  - `history` is the object provided by `Router` that allows navigation between different routes.
+  - `navigation` is the object provided by `react-navigation` that allows navigation within the app.  
+
+This diagram illustrates how the components are nested and how the navigation functionality is provided by the `Router` and `react-navigation` libraries.
 
 ---
 
