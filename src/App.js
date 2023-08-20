@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import "./App.css";
 import FileUpload from "./components/FileUpload";
 import withDuplicateAndNavigation from "./components/withDuplicateAndNavigation";
